@@ -1,6 +1,12 @@
 # novo-teste-aes-simple01
 
-Projeto de teste da software factory. Ainda sem código: a primeira issue define a stack.
+Projeto de teste da software factory. Stack: Node + Express (CommonJS).
+
+## Estrutura
+
+- `src/app.js`: cria e exporta o app Express (não abre porta).
+- `src/server.js`: ponto de entrada; chama `listen` na porta `PORT` (padrão 3000).
+- `test/`: testes com `node:test`.
 
 ## Setup de um checkout novo
 
@@ -9,12 +15,12 @@ Projeto de teste da software factory. Ainda sem código: a primeira issue define
 
 ## Dev server
 
-Ainda não há. Quando houver, deve aceitar a porta por `PORT` (a fábrica usa 5300+ por job, ver `factory/config.json`).
+`PORT=<porta> npm start`. A porta vem de `PORT` (padrão 3000; a fábrica usa 5300+ por job, ver `factory/config.json`).
 
 ## Validação
 
 `bash factory/checks.sh` roda, se existirem: `npm run lint`, `typecheck`, `test`, `build` e `pytest`.
-Ao criar o projeto, defina esses scripts em `package.json` para o gate ter o que verificar.
+Hoje o projeto define só `test`, então a validação roda `npm test` (`node --test`).
 
 ## Software factory
 
